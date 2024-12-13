@@ -1,58 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio | Arkadiusz Równicki</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="navbar-content">
-            <img src="photos/logo.png" alt="Logo" class="logo">
-            <span class="album-number">Numer albumu: 161728</span>
+    <!-- Menu -->
+    <nav class="navbar">
+        <div class="navbar-logo" id="navbar-logo">
+            <img src="photos/logo.png" alt="Logo">
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Section -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="background">
-                <img src="photos/abstr.png" alt="Background" class="background-image">
-            </div>
-            <div class="foreground">
-                <img src="photos/to.png" alt="My Photo" class="profile-photo">
-            </div>
-        </section>
+    <!-- Player Presentation Section -->
+    <section class="player-presentation">
+        <h1>Jestem</h1>
+        <h2>Arkadiusz Równicki</h2>
+        <img src="photos/to.png" alt="Player Image">
+    </section>
 
-        <!-- Content Section -->
-        <section class="content">
-            <div class="experience">
-                <h2>Doświadczenie</h2>
-                <p>Tu wpisz swoje doświadczenie zawodowe, projekty, czy też inne osiągnięcia.</p>
+    <!-- About Me Section -->
+    <section class="player-introduction">
+        <div class="player-description">
+            <h2>O mnie</h2>
+            <p>Jestem Arkadiusz Równicki, profesjonalista z doświadczeniem w e-sporcie, edukacji oraz zarządzaniu projektami. Z pasją rozwijam swoje umiejętności i dzielę się wiedzą, pomagając zespołom osiągać sukcesy.</p>
+        </div>
+        <div class="player-stats">
+            <h2>Informacje ogólne</h2>
+            <div class="general-info">
+                <div><span>Imię i nazwisko:</span> Arkadiusz Równicki</div>
+                <div><span>Narodowość:</span> Polska <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg" alt="Poland Flag" width="20" height="15"></div>
+                <div><span>Data urodzenia:</span> 28 listopada 2002</div>
             </div>
-            <div class="skills">
-                <h2>Umiejętności</h2>
-                <ul>
-                    <li>Kreatywność</li>
-                    <li>Punktualność</li>
-                    <li>Praca w zespole</li>
-                    <li>Komunikatywność</li>
-                </ul>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <h2>Umiejętności</h2>
+        <ul>
+            <li>Komunikatywność</li>
+            <li>Praca w zespole</li>
+            <li>Kreatywność</li>
+            <li>Zarządzanie projektami</li>
+            <li>Analityczne myślenie</li>
+        </ul>
+    </section>
 
     <script>
-        // Script to handle navbar resizing
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 200) {
+                navbar.classList.add('shrink');
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.classList.remove('shrink');
             }
         });
     </script>
