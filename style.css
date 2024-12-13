@@ -1,112 +1,516 @@
-/* General Styles */
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #003049;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #e5e5e5;
+    color: #ffffff;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
-    background-color: #212529;
-    padding: 20px;
+    background-color: #222222;
+    padding: 20px 0px;
     z-index: 1000;
     transition: all 0.5s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: url("photos/overlay.jpg") center/cover;
+}
+.navbar.shrink {
+    padding: 10px 30px;
+}
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.44);
+    z-index: -1;
+}
+.navbar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
 }
 .navbar-logo {
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    transition: all 0.5s ease;
+    z-index: 1001;
+    font-family: 'Orbitron';
+    font-weight: bold;
 }
 .navbar-logo img {
+    height: 100px;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-logo img {
     height: 50px;
 }
-
-/* Player Presentation Section */
-.player-presentation {
-    position: relative;
-    height: 70vh;
-    background: #f4f4f9;
+.navbar-logo span {
+    font-size: 53px;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-logo span {
+    font-size: 26px;
+}
+.navbar-logo .team {
+    color: #ffffff;
+}
+.navbar-logo .cardinalis {
+    color: #003049;
+    animation: shimmer 5s infinite;
+}
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+    margin-right: 20%;
+    z-index: 1001;
+}
+.navbar-menu a {
+    color: #ffffff;
+    padding: 33px;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    position: relative;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-menu a {
+    padding: 10px;
+}
+.navbar-menu a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(229, 9, 20, 0.5);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    filter: blur(4px);
+    z-index: -1;
+}
+.navbar-menu a:hover::before {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+.navbar-menu a:hover .menu-text {
+    opacity: 1;
+    transform: translateY(-28px);
+}
+.navbar-menu i {
+    font-size: 35px;
+    margin-bottom: 8px;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-menu i {
+    font-size: 20px;
+}
+.menu-text {
+    position: absolute;
+    top: calc(100% + 2px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    background-color: #e50914;
+    padding: 5px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.navbar.shrink .menu-text {
+    font-size: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+    border: 3px solid #1e1e1e;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.player-presentation {
+    position: relative;
+    height: 1000px;
+    background: url("photos/abstr.png") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 .player-presentation h1 {
-    font-size: 3rem;
-    color: #003049;
-    margin: 0;
+    font-family: 'Orbitron';
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    left: 14%;
+    font-size: 210px;
+    background: linear-gradient(45deg, #cfcfcf, #888, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s infinite;
+    z-index: 1;
 }
-.player-presentation h2 {
-    font-size: 1.5rem;
-    color: #003049;
-    margin: 10px 0;
+@keyframes gradientAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 .player-presentation img {
-    margin-top: 20px;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    height: 180%;
+    transform: translateY(30%);
+    z-index: 2;
 }
 
-/* Player Introduction Section */
+.player-presentation h2 {
+    position: absolute;
+    top: 62%;
+    left: 31%;
+    font-size: 40px;
+    background: linear-gradient(45deg, #dbdbdb, #868686);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s infinite;
+    z-index: 1;
+    font-family: 'Orbitron';
+    font-weight: bold;
+}
+.player-presentation h3 {
+    position: absolute;
+    top: 64%;
+    left: 34%;
+    font-size: 60px;
+    background: linear-gradient(45deg, #610000,#381315 ,#9b0606);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s infinite;
+    z-index: 1;
+    font-family: 'Orbitron';
+    font-weight: bold;
+}
+
+/* New Section */
 .player-introduction {
     display: flex;
-    justify-content: space-between;
-    padding: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
     background-color: #e5e5e5;
 }
-.player-description, .player-stats {
+.player-description {
     flex: 1;
-    margin: 20px;
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.player-description h2, .player-stats h2 {
-    font-size: 1.8rem;
-    color: #003049;
-    margin-bottom: 15px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto';
+    font-weight: bold;
+    min-height: 600px; 
 }
 .player-description p {
-    font-size: 1rem;
-    color: #212529;
+    font-size: 20px;
     line-height: 1.6;
-}
-.general-info div {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #212529;
-}
-.general-info img {
-    margin-left: 10px;
-    vertical-align: middle;
+    color: black;
 }
 
-/* Skills Section */
-.skills {
-    padding: 40px;
-    background-color: #e5e5e5;
-    text-align: center;
-}
-.skills h2 {
-    font-size: 2rem;
+.player-description h2 {
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 'bold';
+    font-family: 'Orbitron';
     color: #003049;
+}
+.player-description .quote {
+    font-size: 25px;
+    margin-top: 40px;
+    background: linear-gradient(45deg, #003049, hsl(231, 100%, 56%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+.player-stats {
+    flex: 0.6; 
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto';
+    font-weight: bold;
+    text-align: left;
+    min-height: 600px; 
+}
+.player-stats h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #003049;
+    font-family: 'Orbitron';
+
+}
+.general-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: right; 
+    color: black;
+}
+.general-info div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-bottom: 15px;
+}
+.general-info span {
+    margin-right: 10px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.skill-name {
+    flex: 1;
+    font-size: 18px;
+    color: black;
+}
+.skill-level {
+    display: flex;
+    gap: 10px;
+    margin-right: 40px; 
+}
+.skill-level span {
+    width: 30px; 
+    height: 30px; 
+    background-color: #003049;
+    border-radius: 50%;
+}
+.skill-level span.empty {
+    background-color: #555;
+}
+.skill-level span.half {
+    position: relative;
+    background-color: #003049;
+    overflow: hidden;
+    transform: rotate(20deg); 
+}
+.skill-level span.half::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #555;
+}
+
+.overlay-section {
+    position: relative;
+    background: url('photos/overlay.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 50px 20px;
+  }
+  
+  .overlay-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.01); 
+    z-index: 1;
+  }
+  
+  .overlay-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .overlay-content {
+    flex: 1; 
+    margin-right: 20px;
+    text-align: center;
+    padding: 0px 20px;
+    font-family: 'Orbitron';
+  }
+  
+  .overlay-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .overlay-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .overlay-content ul li {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .overlay-icon {
+    flex: 0 0 150px; 
+    text-align: center;
+  }
+  
+  .overlay-icon i {
+    font-size: 120px; 
+    color: white;
+    opacity: 0.8;
+    padding: 0px 350px 0 250px;
+  }
+
+#experience {
+    padding: 50px 10%;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  #experience h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #003049;
+   
+  }
+  
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .experience-item {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .experience-details {
+    flex: 1;
+  }
+  
+  .experience-details h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #003049;
+  }
+  
+  .experience-role {
+    font-style: italic;
+    font-size: 25px;
+    color: #555;
+    margin-bottom: 10px; 
+  }
+  
+  .experience-dates {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 15px;
+    padding-left: 30px;
+  }
+  
+  .experience-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .experience-details ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #444;
+    font-size: 20px;
+  }
+  
+  .experience-logo {
+    flex: 0 0 100px; 
+    text-align: center;
+  }
+  
+  .experience-logo img {
+    max-width: 200px;
+    border-radius: 5px; 
+    padding-top: 50px;
+    padding-right: 100px;
+  }
+  
+
+
+  
+
+.hobby-section {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(5, 5, 5);
+}
+
+.hobby-section h2 {
+    font-size: 60px;
+    letter-spacing: 5px;
     margin-bottom: 20px;
 }
-.skills ul {
-    list-style-type: none;
-    padding: 0;
-    color: #212529;
-    font-size: 1.2rem;
+
+.hobby-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-.skills li {
-    margin: 10px 0;
+
+.hobby-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px; 
+}
+
+.hobby-item img {
+    width: 50px; 
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.hobby-item p {
+    font-size: 20px;
+    margin: 0;
 }
