@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Arkadiusz Równicki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Menu -->
     <nav class="navbar">
         <div class="navbar-logo" id="navbar-logo">
-            <img src="photos/logo.png" alt="Logo">
+            <img src="photos/logo.png" alt="Team Cardinalis Logo">
+            <span><span class="team">AR</span> <span class="cardinalis">161728</span></span>
         </div>
+
     </nav>
 
     <!-- Player Presentation Section -->
@@ -21,34 +29,121 @@
         <img src="photos/to.png" alt="Player Image">
     </section>
 
-    <!-- About Me Section -->
+    <!-- Player Introduction Section -->
     <section class="player-introduction">
         <div class="player-description">
             <h2>O mnie</h2>
-            <p>Jestem Arkadiusz Równicki, profesjonalista z doświadczeniem w e-sporcie, edukacji oraz zarządzaniu projektami. Z pasją rozwijam swoje umiejętności i dzielę się wiedzą, pomagając zespołom osiągać sukcesy.</p>
+            <p>Jestem technikiem informatykiem oraz studentem
+ zaocznym informatyki, specjalizującym się w
+ tworzeniu stron internetowych w HTML i CSS oraz
+ montażu filmów w DaVinci Resolve.</p>
+ 
+ <p>Pasjonuję się
+ projektowaniem graficznym, szczególnie w zakresie
+ tworzenia stron i logotypów, dążąc do estetycznego i
+ atrakcyjnego wizualnie przedstawiania treści.</p>
+ <p>Jako
+ wielokrotny stypendysta Prezesa Rady Ministrów,
+ wyróżniam się pracowitością i wysokimi osiągnięciami
+ akademickimi.</p>
+ <p class="quote">"Kreatywność to po prostu łączenie rzeczy w nowe sposoby."
+    – Steve Jobs</p>
+
+           
         </div>
         <div class="player-stats">
-            <h2>Informacje ogólne</h2>
+            <h2>Informacje podstawowe</h2>
             <div class="general-info">
                 <div><span>Imię i nazwisko:</span> Arkadiusz Równicki</div>
-                <div><span>Narodowość:</span> Polska <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg" alt="Poland Flag" width="20" height="15"></div>
-                <div><span>Data urodzenia:</span> 28 listopada 2002</div>
+                <div><span>Narodowość:</span> Polska<span></span> <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg" alt="Poland Flag" width="20" height="15"></div>
+                <div><span>Urodzony:</span> Listopad 28, 2002</div>
+                <div><span>Specjalizacja:</span>Front-end Developer</div>
+            </div>
+            <h2>Kompetencje</h2>
+            <div class="skill">
+                <span class="skill-name">OBSŁUGA KLIENTA</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">ODPOWIEDZIALNOŚĆ</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">KOMUNIKACJA</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span></span><span class="half"></span>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">PUNKTUALNOŚĆ</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span class="half"></span><span class="empty"></span>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">PRACA POD PRESJĄ</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span class="half"></span><span class="empty"></span>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">ORGANIZACJA PRACY</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span></span><span class="half"></span>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">PRACA W ZESPOLE</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span class="half"></span><span class="empty"></span>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">KREATYWNOŚĆ</span>
+                <div class="skill-level">
+                    <span></span><span></span><span></span><span></span><span></span><span class="half"></span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills">
-        <h2>Umiejętności</h2>
-        <ul>
-            <li>Komunikatywność</li>
-            <li>Praca w zespole</li>
-            <li>Kreatywność</li>
-            <li>Zarządzanie projektami</li>
-            <li>Analityczne myślenie</li>
-        </ul>
-    </section>
-
+    <section id="education-overlay" class="overlay-section">
+        <div class="overlay-container">
+          <div class="overlay-content">
+            <h2>Wykształcenie</h2>
+            <ul>
+              <li>
+                <strong>Uniwersytet Merito w Warszawie</strong> - Informatyk Front End<br>
+                <span>10.2022 - obecnie</span>
+              </li>
+              <li>
+                <strong>Niepubliczne Technikum Zawodowe im. Żołnierzy Sił Pokojowych ONZ ZDZ w Kielcach</strong> - Technik Informatyk<br>
+                <span>2018 - 2022</span>
+              </li>
+              <li>
+                <strong>Gimnazjum im. Tadeusza Kościuszki w Sędziszowie</strong><br>
+                <span>2015 - 2018</span>
+              </li>
+              <li>
+                <strong>Szkoła podstawowa nr.1 im. Tadeusza Kościuszki w Sędziszowie</strong><br>
+                <span>2009 - 2015</span>
+              </li>
+            </ul>
+          </div>
+          <div class="overlay-icon">
+            <!-- Ikona wykształcenia -->
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          </div>
+        </div>
+      </section>
+      
+      
+        
+    </div>
     <script>
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
@@ -59,5 +154,114 @@
             }
         });
     </script>
+
+   <section id="experience">
+    <div class="experience-container">
+      <h2>Doświadczenie</h2>
+      
+      <!-- Team Cardinalis -->
+      <div class="experience-item">
+        <div class="experience-details">
+          <h3>Team Cardinalis</h3>
+          <span class="experience-role">Zawodnik e-sportowy, trener</span>
+          <span class="experience-dates">01.2024 - obecnie</span>
+          <ul>
+            <li>Zarządzanie zespołem: Koordynacja i praca nad składami w organizacji.</li>
+            <li>Trening i komunikacja: Trenowanie członków zespołu, zarządzanie budżetem drużyny, prowadzenie komunikacji w języku angielskim.</li>
+            <li>Organizacja pracy: Skuteczna organizacja pracy zespołu, dbanie o terminowość i jakość wykonania zadań.</li>
+          </ul>
+        </div>
+        <div class="experience-logo">
+          <img src="photos/TC.png" alt="Team Cardinalis Logo">
+        </div>
+      </div>
+  
+      <!-- Medicover Polska -->
+      <div class="experience-item">
+        <div class="experience-details">
+          <h3>Medicover Polska</h3>
+          <span class="experience-role">Asystent ds. klientów</span>
+          <span class="experience-dates">01.2023 - 04.2023, 07.2022 - 01.2023</span>
+          <ul>
+            <li>Obsługa pacjentów: Udzielanie informacji, umawianie wizyt, pomoc w dokumentacji.</li>
+            <li>Sprzedaż pakietów: Prezentacja i sprzedaż pakietów medycznych, realizacja planów sprzedażowych.</li>
+            <li>Zarządzanie danymi: Aktualizacja bazy pacjentów w CRM, przygotowywanie raportów.</li>
+            <li>Rozwiązywanie konfliktów: Rozwiązywanie skarg, współpraca z zespołem, szkolenia z komunikacji.</li>
+          </ul>
+        </div>
+        <div class="experience-logo">
+          <img src="photos/logo2.png" alt="Medicover Logo">
+        </div>
+      </div>
+  
+      <!-- Technikum -->
+      <div class="experience-item">
+        <div class="experience-details">
+          <h3>Niepubliczne Technikum Zawodowe im. Żołnierzy Sił Pokojowych ONZ ZDZ w Kielcach</h3>
+          <span class="experience-role">Nauczyciel/Koordynator</span>
+          <span class="experience-dates">09.2020 - 06.2023</span>
+          <ul>
+            <li>Zajęcia dydaktyczne: Prowadzenie zajęć z komunikacji, języka i rywalizacji, dostosowanych do różnych grup wiekowych.</li>
+            <li>Wsparcie techniczne: Konfiguracja komputerów i utrzymanie porządku na stanowiskach pracy.</li>
+            <li>Koordynacja działań: Organizacja i koordynowanie wydarzeń szkolnych oraz współpraca z innymi nauczycielami.</li>
+            <li>Rozwój umiejętności uczniów: Pomoc w rozwijaniu umiejętności pracy w zespole oraz organizacji własnej pracy uczniów.</li>
+          </ul>
+        </div>
+        <div class="experience-logo">
+          <img src="photos/logo3.png" alt="Technikum Logo">
+        </div>
+      </div>
+  
+      <!-- APP Informatica -->
+      <div class="experience-item">
+        <div class="experience-details">
+          <h3>APP Informatica</h3>
+          <span class="experience-role">Serwisant/Sprzedawca - Praktykant w Hiszpanii</span>
+          <span class="experience-dates">07.2020 - 09.2023</span>
+          <ul>
+            <li>Sprzedaż: Sprzedaż urządzeń informatycznych w języku angielskim i hiszpańskim.</li>
+            <li>Utrzymanie porządku: Dbanie o czystość i organizację stanowisk pracy.</li>
+            <li>Obsługa klienta: Umawianie spotkań, przyjmowanie zamówień i wydawanie towaru klientom.</li>
+          </ul>
+        </div>
+        <div class="experience-logo">
+          <img src="photos/logo4.png" alt="APP Informatica Logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hobby-section">
+    <h2>HOBBY</h2>
+    <div class="hobby-container">
+        <div class="hobby-item">
+            <img src="photos/camera.png" alt="Nagrywanie">
+            <p>NAGRYWANIE</p>
+        </div>
+        <div class="hobby-item">
+            <img src="photos/pad.png" alt="E-Sport">
+            <p>E-SPORT</p>
+        </div>
+        <div class="hobby-item">
+            <img src="photos/trim.png" alt="Montaż">
+            <p>MONTOWANIE</p>
+        </div>
+        <div class="hobby-item">
+            <img src="photos/plane.png" alt="Podróże">
+            <p>PODRÓŻE</p>
+        </div>
+        <div class="hobby-item">
+            <img src="photos/head.png" alt="Psychologia">
+            <p>PSYCHOLOGIA</p>
+        </div>
+    </div>
+</section>
+
+<!-- IKONY
+<a target="_blank" href="https://icons8.com/icon/JtRYpjtdhzhs/game-controller">Game Controller</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/57467/video-trimming">Video Trimming</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/49506/airplane">Plane</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/o8REW0inhzbM/learning">Learning</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+-->
 </body>
 </html>
