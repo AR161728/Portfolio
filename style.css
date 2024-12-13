@@ -1,10 +1,338 @@
-.blok1{
-    background-color: red;
-    width: 300px;
-    height: 300px;
+
+body {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
-.blok2{
-    background-color: blue;
-    width: 300px;
-    height: 300px;
+
+/* Menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: #222222;
+    padding: 33px 66px;
+    z-index: 1000;
+    transition: all 0.5s ease;
+    background: url("photos/overlay.jpg") center/cover;
+}
+.navbar.shrink {
+    padding: 10px 30px;
+}
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.44);
+    z-index: -1;
+}
+.navbar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    transition: all 0.5s ease;
+    z-index: 1001;
+    font-family: 'Orbitron';
+    font-weight: bold;
+}
+.navbar-logo img {
+    height: 100px;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-logo img {
+    height: 50px;
+}
+.navbar-logo span {
+    font-size: 53px;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-logo span {
+    font-size: 26px;
+}
+.navbar-logo .team {
+    color: #ffffff;
+}
+.navbar-logo .cardinalis {
+    color: #e50914;
+    animation: shimmer 5s infinite;
+}
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+    margin-right: 20%;
+    z-index: 1001;
+}
+.navbar-menu a {
+    color: #ffffff;
+    padding: 33px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-menu a {
+    padding: 10px;
+}
+.navbar-menu a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(229, 9, 20, 0.5);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    filter: blur(4px);
+    z-index: -1;
+}
+.navbar-menu a:hover::before {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+.navbar-menu a:hover .menu-text {
+    opacity: 1;
+    transform: translateY(-28px);
+}
+.navbar-menu i {
+    font-size: 35px;
+    margin-bottom: 8px;
+    transition: all 0.5s ease;
+}
+.navbar.shrink .navbar-menu i {
+    font-size: 20px;
+}
+.menu-text {
+    position: absolute;
+    top: calc(100% + 2px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    background-color: #e50914;
+    padding: 5px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.navbar.shrink .menu-text {
+    font-size: 10px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+    border: 3px solid #1e1e1e;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Content Placeholder */
+.content {
+    height: 2000px;
+    padding-top: 130px;
+}
+
+/* Player Presentation Section */
+.player-presentation {
+    position: relative;
+    height: 1000px;
+    background: url("photos/abstr.png") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.player-presentation h1 {
+    font-family: 'Orbitron';
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    left: 14%;
+    font-size: 210px;
+    background: linear-gradient(45deg, #c30f18,#381315, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s infinite;
+    z-index: 1;
+}
+@keyframes gradientAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+.player-presentation img {
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    height: 180%;
+    transform: translateY(30%);
+    z-index: 2;
+}
+
+.player-presentation h2 {
+    position: absolute;
+    top: 62%;
+    left: 31%;
+    font-size: 40px;
+    background: linear-gradient(45deg, #dbdbdb, #868686);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s infinite;
+    z-index: 1;
+    font-family: 'Orbitron';
+    font-weight: bold;
+}
+.player-presentation h3 {
+    position: absolute;
+    top: 64%;
+    left: 34%;
+    font-size: 60px;
+    background: linear-gradient(45deg, #610000,#381315 ,#9b0606);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s infinite;
+    z-index: 1;
+    font-family: 'Orbitron';
+    font-weight: bold;
+}
+
+/* New Section */
+.player-introduction {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+    background-color: #1e1e1e;
+}
+.player-description {
+    flex: 1;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(33, 33, 33, 0.7); /* Darker background */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Orbitron';
+    font-weight: bold;
+    min-height: 600px; /* Increased height */
+}
+.player-description p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.player-description h2 {
+    font-size: 30px;
+    line-height: 1;
+    font-weight: bold;
+}
+.player-description .quote {
+    font-size: 25px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #e50914, #ff6161);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+.player-stats {
+    flex: 0.6; /* Reduced width */
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(33, 33, 33, 0.7); /* Darker background */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Orbitron';
+    font-weight: bold;
+    text-align: left;
+    min-height: 600px; /* Increased height */
+}
+.player-stats h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+.general-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: right; /* Right aligned */
+}
+.general-info div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Right aligned */
+    margin-bottom: 15px;
+}
+.general-info span {
+    margin-right: 10px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.skill-name {
+    flex: 1;
+    font-size: 18px;
+}
+.skill-level {
+    display: flex;
+    gap: 10px;
+    margin-right: 40px; /* Increased margin-right */
+}
+.skill-level span {
+    width: 30px; /* Increased size */
+    height: 30px; /* Increased size */
+    background-color: #e50914;
+    border-radius: 50%;
+}
+.skill-level span.empty {
+    background-color: #555;
+}
+.skill-level span.half {
+    position: relative;
+    background-color: #e50914;
+    overflow: hidden;
+    transform: rotate(20deg); /* Rotate half circle by 45 degrees */
+}
+.skill-level span.half::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #555;
 }
